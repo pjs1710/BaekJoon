@@ -8,7 +8,7 @@ public class No_13335 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("트럭의 수, 다리의 길이, 최대 하중을 입력하세요 : ");
+        // System.out.print("트럭의 수, 다리의 길이, 최대 하중을 입력하세요 : ");
         String s = sc.nextLine();
         String[] s1 = s.split(" ");
         int truckNum = Integer.parseInt(s1[0]); // 트럭의 수
@@ -16,7 +16,7 @@ public class No_13335 {
         int maxWeight = Integer.parseInt(s1[2]); // 최대 하중
         int[] truck = new int[truckNum]; // 트럭 무게를 저장할 int형 배열
 
-        System.out.print("트럭의 무게를 입력하세요 : ");
+        // System.out.print("트럭의 무게를 입력하세요 : ");
         String truckWeight = sc.nextLine();
         String[] split = truckWeight.split(" ");
 
@@ -46,6 +46,6 @@ public class No_13335 {
             }
         }
 
-        System.out.println("최단 시간 : " + timeCnt);
+        System.out.println(timeCnt);
     }
 }
