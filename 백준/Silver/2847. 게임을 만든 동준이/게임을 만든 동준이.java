@@ -1,17 +1,17 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Main { // 오름차순으로 만들기
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt(); // 레벨의 수
-        sc.nextLine();
-        int[] score = new int[N]; // 점수를 담을 배열 만들고
-        int cnt = 0; // 총 몇번 내렸는지 카운트
-
-        for (int i = 0; i < N; i++) { // 값 입력 받아서 배열에 담기
-            score[i] = sc.nextInt();
-            sc.nextLine();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int[] score = new int[N];
+        int cnt = 0;
+        for (int i = 0; i < N; i++) {
+            score[i] = Integer.parseInt(br.readLine());
         }
         for (int i = N - 1; i > 0; i--) { // 뒤에서부터 시작
             if (score[i - 1] >= score[i]) { // 만약에 가장 큰 수보다 크거나 같으면?
