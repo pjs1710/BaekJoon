@@ -40,13 +40,13 @@ public class No_10798 {
             }
         }
 
-        printString();
+        printString(); // 결과 출력 함수
     }
 
     public static void printString() {
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 5; j++) {
-                if (input[j][i] != null) {
+                if (input[j][i] != null) { // null이 아닐 때만 출력
                     System.out.print(input[j][i]);
                 }
             }
