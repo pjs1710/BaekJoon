@@ -29,27 +29,25 @@ import java.util.*;
 
 public class No_10798 {
 
-    static String[][] input = new String[5][15];
+    static String[][] input = new String[5][];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int maxLen = 0;
+
         for (int i = 0; i < 5; i++) {
-            String[] data = br.readLine().split("");
-            for (int j = 0; j < data.length; j++) {
-                input[i][j] = data[j];
-            }
+            input[i] = br.readLine().split("");
+            maxLen = Math.max(maxLen, input[i].length); // 최대 길이 갱신
         }
 
-        printString(); // 결과 출력 함수
-    }
-
-    public static void printString() {
-        for (int i = 0; i < 15; i++) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < maxLen; i++) {
             for (int j = 0; j < 5; j++) {
-                if (input[j][i] != null) { // null이 아닐 때만 출력
-                    System.out.print(input[j][i]);
+                if (i < input[j].length) { // 행의 길이보다 열 인덱스가 작을 때만 접근. ex) 행의 길이 : 4, 인덱스는 0, 1, 2, 3만 접근
+                    sb.append(input[j][i]);
                 }
             }
         }
+        System.out.println(sb); // 한번에 결과 출력
     }
 }
